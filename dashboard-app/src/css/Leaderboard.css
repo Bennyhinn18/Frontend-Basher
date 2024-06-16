@@ -4586,13 +4586,13 @@ body {
    font-style: normal;
    font-weight: 400;
    font-display: block;
-   src: url(/_next/static/media/fa-brands-400.542b8394.eot);
-   src: url(/_next/static/media/fa-brands-400.542b8394.eot?#iefix)
+   src: url(https://coingain-next.vercel.app/_next/static/media/fa-brands-400.542b8394.eot);
+   src: url(https://coingain-next.vercel.app/_next/static/media/fa-brands-400.542b8394.eot?#iefix)
        format("embedded-opentype"),
-     url(/_next/static/media/fa-brands-400.18993be8.woff2) format("woff2"),
-     url(/_next/static/media/fa-brands-400.6f0371bc.woff) format("woff"),
-     url(/_next/static/media/fa-brands-400.04d56fe8.ttf) format("truetype"),
-     url(/_next/static/media/fa-brands-400.5676084d.svg#fontawesome)
+     url(https://coingain-next.vercel.app/_next/static/media/fa-brands-400.18993be8.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-brands-400.6f0371bc.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-brands-400.04d56fe8.ttf) format("truetype"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-brands-400.5676084d.svg#fontawesome)
        format("svg");
  }
  .fab {
@@ -4603,13 +4603,13 @@ body {
    font-style: normal;
    font-weight: 400;
    font-display: block;
-   src: url(/_next/static/media/fa-regular-400.15524754.eot);
-   src: url(/_next/static/media/fa-regular-400.15524754.eot?#iefix)
+   src: url(https://coingain-next.vercel.app/_next/static/media/fa-regular-400.15524754.eot);
+   src: url(https://coingain-next.vercel.app/_next/static/media/fa-regular-400.15524754.eot?#iefix)
        format("embedded-opentype"),
-     url(/_next/static/media/fa-regular-400.e45bb696.woff2) format("woff2"),
-     url(/_next/static/media/fa-regular-400.9a8db673.woff) format("woff"),
-     url(/_next/static/media/fa-regular-400.6b314a37.ttf) format("truetype"),
-     url(/_next/static/media/fa-regular-400.41dc5fca.svg#fontawesome)
+     url(https://coingain-next.vercel.app/_next/static/media/fa-regular-400.e45bb696.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-regular-400.9a8db673.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-regular-400.6b314a37.ttf) format("truetype"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-regular-400.41dc5fca.svg#fontawesome)
        format("svg");
  }
  .fab,
@@ -4621,13 +4621,13 @@ body {
    font-style: normal;
    font-weight: 900;
    font-display: block;
-   src: url(/_next/static/media/fa-solid-900.c2cee444.eot);
-   src: url(/_next/static/media/fa-solid-900.c2cee444.eot?#iefix)
+   src: url(https://coingain-next.vercel.app/_next/static/media/fa-solid-900.c2cee444.eot);
+   src: url(https://coingain-next.vercel.app/_next/static/media/fa-solid-900.c2cee444.eot?#iefix)
        format("embedded-opentype"),
-     url(/_next/static/media/fa-solid-900.16e3d2f0.woff2) format("woff2"),
-     url(/_next/static/media/fa-solid-900.efdd46db.woff) format("woff"),
-     url(/_next/static/media/fa-solid-900.bf8656b1.ttf) format("truetype"),
-     url(/_next/static/media/fa-solid-900.6bdf7530.svg#fontawesome) format("svg");
+     url(https://coingain-next.vercel.app/_next/static/media/fa-solid-900.16e3d2f0.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-solid-900.efdd46db.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-solid-900.bf8656b1.ttf) format("truetype"),
+     url(https://coingain-next.vercel.app/_next/static/media/fa-solid-900.6bdf7530.svg#fontawesome) format("svg");
  }
  .fa,
  .far,
@@ -4650,8 +4650,8 @@ body {
    font-family: IcoFont;
    font-weight: 400;
    font-style: Regular;
-   src: url(/_next/static/media/icofont.c6ed992f.woff2) format("woff2"),
-     url(/_next/static/media/icofont.6c4bc344.woff) format("woff");
+   src: url(https://coingain-next.vercel.app/_next/static/media/icofont.c6ed992f.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/icofont.6c4bc344.woff) format("woff");
  }
  [class*=" icofont-"],
  [class^="icofont-"] {
@@ -11097,8 +11097,8 @@ body {
  }
  @font-face {
    font-family: bootstrap-icons;
-   src: url(/_next/static/media/bootstrap-icons.877dafa2.woff) format("woff"),
-     url(/_next/static/media/bootstrap-icons.cb8603b4.woff2) format("woff2");
+   src: url(https://coingain-next.vercel.app/_next/static/media/bootstrap-icons.877dafa2.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/bootstrap-icons.cb8603b4.woff2) format("woff2");
  }
  [class*=" bi-"]:before,
  [class^="bi-"]:before {
@@ -19111,13 +19111,13 @@ body {
    font-style: normal;
    font-weight: 400;
    font-display: auto;
-   src: url(/_next/static/media/la-brands-400.48e89963.eot);
-   src: url(/_next/static/media/la-brands-400.48e89963.eot?#iefix)
+   src: url(https://coingain-next.vercel.app/_next/static/media/la-brands-400.48e89963.eot);
+   src: url(https://coingain-next.vercel.app/_next/static/media/la-brands-400.48e89963.eot?#iefix)
        format("embedded-opentype"),
-     url(/_next/static/media/la-brands-400.122c4137.woff2) format("woff2"),
-     url(/_next/static/media/la-brands-400.1ec1f0f5.woff) format("woff"),
-     url(/_next/static/media/la-brands-400.4343d0c0.ttf) format("truetype"),
-     url(/_next/static/media/la-brands-400.6ac81171.svg#lineawesome)
+     url(https://coingain-next.vercel.app/_next/static/media/la-brands-400.122c4137.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-brands-400.1ec1f0f5.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-brands-400.4343d0c0.ttf) format("truetype"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-brands-400.6ac81171.svg#lineawesome)
        format("svg");
  }
  .lab {
@@ -19128,13 +19128,13 @@ body {
    font-style: normal;
    font-weight: 400;
    font-display: auto;
-   src: url(/_next/static/media/la-regular-400.7b67c533.eot);
-   src: url(/_next/static/media/la-regular-400.7b67c533.eot?#iefix)
+   src: url(https://coingain-next.vercel.app/_next/static/media/la-regular-400.7b67c533.eot);
+   src: url(https://coingain-next.vercel.app/_next/static/media/la-regular-400.7b67c533.eot?#iefix)
        format("embedded-opentype"),
-     url(/_next/static/media/la-regular-400.bfaaab46.woff2) format("woff2"),
-     url(/_next/static/media/la-regular-400.f45e994d.woff) format("woff"),
-     url(/_next/static/media/la-regular-400.df0ba4ff.ttf) format("truetype"),
-     url(/_next/static/media/la-regular-400.5e18e0c4.svg#lineawesome)
+     url(https://coingain-next.vercel.app/_next/static/media/la-regular-400.bfaaab46.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-regular-400.f45e994d.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-regular-400.df0ba4ff.ttf) format("truetype"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-regular-400.5e18e0c4.svg#lineawesome)
        format("svg");
  }
  .lar {
@@ -19145,13 +19145,13 @@ body {
    font-style: normal;
    font-weight: 900;
    font-display: auto;
-   src: url(/_next/static/media/la-solid-900.85692007.eot);
-   src: url(/_next/static/media/la-solid-900.85692007.eot?#iefix)
+   src: url(https://coingain-next.vercel.app/_next/static/media/la-solid-900.85692007.eot);
+   src: url(https://coingain-next.vercel.app/_next/static/media/la-solid-900.85692007.eot?#iefix)
        format("embedded-opentype"),
-     url(/_next/static/media/la-solid-900.8e5c796f.woff2) format("woff2"),
-     url(/_next/static/media/la-solid-900.7dd81512.woff) format("woff"),
-     url(/_next/static/media/la-solid-900.582c3a0f.ttf) format("truetype"),
-     url(/_next/static/media/la-solid-900.56cddde2.svg#lineawesome) format("svg");
+     url(https://coingain-next.vercel.app/_next/static/media/la-solid-900.8e5c796f.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-solid-900.7dd81512.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-solid-900.582c3a0f.ttf) format("truetype"),
+     url(https://coingain-next.vercel.app/_next/static/media/la-solid-900.56cddde2.svg#lineawesome) format("svg");
  }
  .la,
  .lar,
@@ -20856,9 +20856,9 @@ body {
  /*! Cryptocoins - cryptocurrency icon font | https://github.com/allienworks/cryptocoins */
  @font-face {
    font-family: cryptocoins;
-   src: url(/_next/static/media/cryptocoins.2fde3f81.woff2) format("woff2"),
-     url(/_next/static/media/cryptocoins.698a44ef.woff) format("woff"),
-     url(/_next/static/media/cryptocoins.6b702ee1.ttf) format("truetype");
+   src: url(https://coingain-next.vercel.app/_next/static/media/cryptocoins.2fde3f81.woff2) format("woff2"),
+     url(https://coingain-next.vercel.app/_next/static/media/cryptocoins.698a44ef.woff) format("woff"),
+     url(https://coingain-next.vercel.app/_next/static/media/cryptocoins.6b702ee1.ttf) format("truetype");
  }
  .cc:before {
    font-family: cryptocoins;
@@ -33857,7 +33857,7 @@ body {
    right: auto;
    -webkit-transform: translateX(-50%) translateY(-50%);
    transform: translateX(-50%) translateY(-50%);
-   background: url(/_next/static/media/cd-arrow.c7e2b5a2.svg) no-repeat 0 0;
+   background: url(https://coingain-next.vercel.app/_next/static/media/cd-arrow.c7e2b5a2.svg) no-repeat 0 0;
  }
  .cd-timeline-navigation a.prev {
    left: 0;
@@ -34759,7 +34759,7 @@ body {
    margin-left: 10px;
  }
  .game_skin-card:after {
-   background-image: url(/_next/static/media/1.413ede00.png);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/1.413ede00.png);
    background-size: cover;
    background-position: 50%;
    background-repeat: no-repeat;
@@ -35258,7 +35258,7 @@ body {
    right: 0;
    top: 0;
    bottom: 0;
-   background-image: url(/_next/static/media/bonus_card_bg.c35e80cc.svg);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/bonus_card_bg.c35e80cc.svg);
    background-size: cover;
    background-position: 50%;
    background-repeat: no-repeat;
@@ -35301,7 +35301,7 @@ body {
    color: #fff;
  }
  .bonus_card.reward_card:after {
-   background-image: url(/_next/static/media/reward_card_bg.94a7bac7.svg);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/reward_card_bg.94a7bac7.svg);
  }
  .bonus_card.reward_card.active,
  .bonus_card.reward_card:focus,
@@ -37378,7 +37378,7 @@ body {
    margin-top: 30px;
  }
  .gift_card-content:after {
-   background-image: url(/_next/static/media/1.413ede00.png);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/1.413ede00.png);
    background-size: cover;
    background-position: 50%;
    background-repeat: no-repeat;
@@ -37410,7 +37410,7 @@ body {
    background-image: linear-gradient(to bottom right, #2f2cd8, #8481f5);
  }
  .gift_card-content.even:after {
-   background-image: url(/_next/static/media/2.355a5bdd.png);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/2.355a5bdd.png);
  }
  .gift_card-content.active:after,
  .gift_card-content.active:before,
@@ -38129,7 +38129,7 @@ body {
  }
  .join_us {
    padding-top: 10%;
-   background-image: url(/_next/static/media/2nd-scction.936aeb61.png);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/2nd-scction.936aeb61.png);
    background-size: cover;
    background-position: 50% 82%;
    background-repeat: no-repeat;
@@ -38151,7 +38151,7 @@ body {
    color: #7272a8;
  }
  .featured {
-   background-image: url(/_next/static/media/section3.8aee7f24.png);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/section3.8aee7f24.png);
    background-size: cover;
    background-position: 50% 60%;
    background-repeat: no-repeat;
@@ -38186,7 +38186,7 @@ body {
    color: #7272a8;
  }
  .testimonial {
-   background-image: url(/_next/static/media/testiminial-bg.1dd60e1b.png);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/testiminial-bg.1dd60e1b.png);
    background-size: cover;
    background-position: 50%;
    background-repeat: no-repeat;
@@ -38250,7 +38250,7 @@ body {
    box-shadow: none;
  }
  .cta {
-   background-image: url(/_next/static/media/cta-bg.31acc565.png);
+   background-image: url(https://coingain-next.vercel.app/_next/static/media/cta-bg.31acc565.png);
    background-size: cover;
    background-position: 50% 14%;
    background-repeat: no-repeat;

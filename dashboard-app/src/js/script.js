@@ -1,34 +1,24 @@
 // script.js
 export function handleDropdown() {
     const userElement = document.querySelector('.profile_log .user');
-    if (!userElement) {
-        console.error('User element not found');
+    const dropdownMenu = document.querySelector('.profile_log .dropdown-menu.dropdown-menu-end');
+
+    if (!userElement || !dropdownMenu) {
+        console.error('User element or dropdown menu not found');
         return;
     }
 
-    userElement.addEventListener('click', function() {
-        var dropdownMenu = document.querySelector('.profile_log .dropdown-menu.dropdown-menu-end');
-        if (!dropdownMenu) {
-            console.error('Dropdown menu not found');
-            return;
+    const handleClickOutside = (event) => {
+        if (!userElement.contains(event.target) && dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.remove('show');
+            document.removeEventListener('click', handleClickOutside); // Remove the event listener when the dropdown is closed
         }
+    };
 
-        if (dropdownMenu.style.display === 'block') {
-            dropdownMenu.style.display = 'none';
-        } else {
-            dropdownMenu.style.display = 'block';
+    userElement.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('show');
+        if (dropdownMenu.classList.contains('show')) {
+            document.addEventListener('click', handleClickOutside); // Add the event listener when the dropdown is opened
         }
     });
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.profile_log .user') && !event.target.matches('.profile_log .user *')) {
-            var dropdowns = document.querySelectorAll('.dropdown-menu.dropdown-menu-end');
-            dropdowns.forEach(function(dropdown) {
-                if (dropdown.style.display === 'block') {
-                    dropdown.style.display = 'none';
-                }
-            });
-        }
-    }
 }

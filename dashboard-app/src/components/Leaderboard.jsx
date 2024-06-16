@@ -15,20 +15,20 @@ import line from '../assets/img/line.svg';
 import Bcircle from '../assets/img/brown_circle.svg';
 import logo from '../assets/img/logo.png';
 import '../css/Leaderboard.css';
+import { fetchLeaderboard } from '../api.js';
 
 import { Link } from 'react-router-dom'; // Use Link for internal navigation
 
 const Leaderboard = () => {
     const [leaderboard, setLeaderboard] = useState([]);
 
-    useEffect(() => {
-        fetch('https://9g7phc4b-8000.inc1.devtunnels.ms/api/leaderboard/')
-            .then(response => response.json())
-            .then(data => setLeaderboard(data))
-            .catch(error => console.error('There was an error!', error));
-        
-    }, []);
+   
+// ...
 
+useEffect(() => {
+    fetchLeaderboard()
+        .then(data => setLeaderboard(data));
+}, []);
     const randomUserNumber = Math.floor(Math.random() * 7) + 1;
 
     return (

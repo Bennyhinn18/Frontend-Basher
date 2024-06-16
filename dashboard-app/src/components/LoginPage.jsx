@@ -5,7 +5,9 @@ import google from '../assets/img/google-icon.png';
 import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
 import '../css/LoginPage.css';
-import axios from 'axios';
+
+import {googleLogin} from  '../api';
+
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -30,34 +32,21 @@ function LoginPage() {
     document.getElementById('container').classList.remove('right-panel-active');
   };
 
-  const login = useGoogleLogin({
-    onSuccess: async (tokenResponse) => {
-      console.log('Login successful:', tokenResponse);
-      const { access_token } = tokenResponse;
-      console.log(access_token);
-      try {
-        const res = await axios.post('https://9g7phc4b-8000.inc1.devtunnels.ms/api/auth/social/google/', {
-          access_token,
-          
-        });
 
-        if (res.status === 200) {
-          const data = res.data;
-          console.log('Login successful:', data);
-          // Assuming the Django backend sends a JWT token on successful login
-          localStorage.setItem('token', data.key);
-          navigate('/leaderboard'); // Navigate to a protected route
-        } else {
-          console.error('Login failed:', res.data.message);
-        }
-      } catch (error) {
-        console.error('An error occurred:', error);
-      }
-    },
-    onError: (error) => {
-      console.log(error);
-    },
-  });
+
+
+
+// Inside your component
+
+
+const login = useGoogleLogin({
+  onSuccess: async (tokenResponse) => {
+    console.log('Login successful:', tokenResponse);
+    const { access_token } = tokenResponse;
+    googleLogin(access_token, navigate); // pass the history object
+  }
+});
+
 
   return (
     <div id="login-page">
