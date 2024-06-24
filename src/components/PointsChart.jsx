@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import axios from 'axios';
+import { fetchPointsHistory } from '../api'; // Adjust the import path as needed
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-luxon'; // Import the Luxon adapter
 import { DateTime } from 'luxon';
@@ -7,64 +7,68 @@ import { DateTime } from 'luxon';
 const PointsChart = ({ duration }) => {
     const [dates, setDates] = useState([]);
     const [points, setPoints] = useState([]);
-    const token = localStorage.getItem('token');
     const chartRef = useRef(null);
     const chartInstanceRef = useRef(null);
 
     useEffect(() => {
-        axios.get('https://9g7phc4b-8000.inc1.devtunnels.ms/api/points/', {
-            headers: {
-                'Authorization': `Token ${token}`,
-            },
-        })
-        .then(response => {
-            const { dates, points } = response.data;
-            setDates(dates);
-            setPoints(points);
-            drawChart(dates, points);
-        })
-        .catch(error => console.error('Error fetching points data:', error));
+        const fetchData = async () => {
+            const data = await fetchPointsHistory();
+            if (data.length > 0) {
+                const mappedData = mapPointsToDates(data, duration);
+                setDates(mappedData.dates);
+                setPoints(mappedData.points);
+                drawChart(mappedData.dates, mappedData.points);
+            }
+        };
+
+        fetchData();
 
         return () => {
             if (chartInstanceRef.current) {
                 chartInstanceRef.current.destroy();
             }
         };
-    }, [token]);
+    }, [duration]);
 
-    useEffect(() => {
-        const filteredData = filterDataByDuration(dates, points, duration);
-        drawChart(filteredData.dates, filteredData.points);
-    }, [dates, points, duration]);
-
-    const filterDataByDuration = (dates, points, duration) => {
+    const mapPointsToDates = (data, duration) => {
         const now = DateTime.now();
-        let filteredDates = dates;
-        let filteredPoints = points;
+        let days;
 
         switch (duration) {
             case '7d':
-                filteredDates = dates.filter(date => DateTime.fromISO(date) >= now.minus({ days: 7 }));
-                filteredPoints = points.slice(points.length - filteredDates.length);
+                days = 7;
                 break;
             case '14d':
-                filteredDates = dates.filter(date => DateTime.fromISO(date) >= now.minus({ days: 14 }));
-                filteredPoints = points.slice(points.length - filteredDates.length);
+                days = 14;
                 break;
             case '30d':
-                filteredDates = dates.filter(date => DateTime.fromISO(date) >= now.minus({ days: 30 }));
-                filteredPoints = points.slice(points.length - filteredDates.length);
+                days = 30;
                 break;
             case 'all':
             default:
+                days = data.length;
                 break;
         }
 
-        return { dates: filteredDates, points: filteredPoints };
+        const dates = Array.from({ length: days }, (_, i) => now.minus({ days: days - i - 1 }).toISODate());
+        const points = Array(days).fill(0);
+
+        data.forEach(entry => {
+            const entryDate = DateTime.fromISO(entry.timestamp).toISODate();
+            const index = dates.indexOf(entryDate);
+            if (index !== -1) {
+                points[index] += entry.points; // Sum up points for each date
+            }
+        });
+
+        return { dates, points };
     };
 
     const drawChart = (dates, points) => {
         const ctx = chartRef.current.getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, '#F6B81D'); // your color at the top
+        gradient.addColorStop(1, '#f6ba237a'); // your color at the bottom
 
         if (chartInstanceRef.current) {
             chartInstanceRef.current.destroy();
@@ -80,7 +84,7 @@ const PointsChart = ({ duration }) => {
                     fill: true,
                     borderColor: "#fff",
                     borderWidth: "0",
-                    backgroundColor: "#F6B81D",
+                    backgroundColor: gradient,
                     pointColor: "#F6B81D",
                     pointBorderColor: "#fff",
                     pointBackgroundColor: "#F6B81D",
@@ -93,20 +97,20 @@ const PointsChart = ({ duration }) => {
                 }]
             },
             options: {
-                legend: !1,
+                responsive: true,
                 scales: {
                     x: {
-                        grid: {
-                            display: false
-                        },
                         type: 'time',
                         time: {
                             unit: 'day'
+                        },
+                        grid: {
+                            display: false
                         }
                     },
                     y: {
                         grid: {
-
+                            display: true
                         }
                     }
                 }

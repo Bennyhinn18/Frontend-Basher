@@ -96,7 +96,11 @@ export const googleLogin = async (accessToken, navigate) => {
       console.error('Login failed:', response.data.message);
     }
   } catch (error) {
-    console.error('An error occurred:', error);
+    if (error.response && error.response.status === 403) {
+      throw new Error('You are not allowed to access this resource.');
+    } else {
+      console.error('An error occurred:', error);
+    }
   }
 };
 
@@ -114,4 +118,18 @@ export const fetchLeaderboard = async () => {
     console.error('There was an error!', error);
     return null;
   }
+};
+export const fetchUserDataByUsername = async (username) => {
+    const token = localStorage.getItem('token');
+    try {
+        const response = await axios.get(`https://9g7phc4b-8000.inc1.devtunnels.ms/api/profile/${username}/`, {
+            headers: {
+                'Authorization': `Token ${token}`,
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching user data:', error);
+        return null;
+    }
 };

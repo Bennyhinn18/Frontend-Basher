@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useParams } from 'react-router-dom';
+import { fetchUserData, fetchUserDataByUsername } from '../api'; // Import the new API method
 import crownIcon from '../assets/img/crown.svg';
 import cupIcon from '../assets/img/cup.svg';
 import medalIcon from '../assets/img/medal.svg';
@@ -17,12 +17,11 @@ import Bcircle from '../assets/img/brown_circle.svg';
 import logo from '../assets/img/logo.png';
 import '../css/Leaderboard.css';
 import PointsChart from './PointsChart';
-import { fetchUserData } from '../api'; // Import fetchUserData
 
 const ProfilePage = () => {
+    const { username } = useParams();
     const [profile, setProfile] = useState({});
     const [duration, setDuration] = useState('all'); // State for selected duration
-    const token = localStorage.getItem('token');
     const durationDisplayNames = {
         'all': 'All Time',
         '7d': '7 Days',
@@ -32,12 +31,17 @@ const ProfilePage = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const userData = await fetchUserData();
+            let userData;
+            if (username) {
+                userData = await fetchUserDataByUsername(username);
+            } else {
+                userData = await fetchUserData();
+            }
             setProfile(userData);
         };
 
         fetchData();
-    }, []);
+    }, [username]);
 
     const handleDurationChange = (newDuration) => {
         setDuration(newDuration);
@@ -68,16 +72,16 @@ const ProfilePage = () => {
                         <div className="row">
                             <div className="col-xl-4">
                                 <div className="profile_card">
-                                 <div className="d-flex">
-                                    {profile.avatar ? (
-                                        <img src={profile.avatar} alt="Profile" />
-                                    ) : (
-                                        <span className="thumb"><i className="la la-user"></i></span>
-                                    )}
-                                    <div className="flex-grow-1">
-                                        <h4>{profile.username}</h4>
-                                        <p>{profile.email}</p>
-                                    </div>
+                                    <div className="d-flex">
+                                        {profile.avatar ? (
+                                            <img src={profile.avatar} alt="Profile" />
+                                        ) : (
+                                            <span className="thumb"><i className="la la-user"></i></span>
+                                        )}
+                                        <div className="flex-grow-1">
+                                            <h4>{profile.username}</h4>
+                                            <p>{profile.email}</p>
+                                        </div>
                                     </div>
                                     <div className="profile-reg">
                                         <div className="registered">
@@ -93,7 +97,7 @@ const ProfilePage = () => {
                                     <div className="profile_list">
                                         <ul className="nav nav-tabs">
                                             <li>
-                                                <Link to="/profile#coinEarn" className="active">
+                                                <Link to={`/profile/${username || ''}#coinEarn`} className="active">
                                                     <span className="icons usd">
                                                         <i className="fa fa-usd"></i>
                                                     </span>
@@ -102,7 +106,7 @@ const ProfilePage = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="/profile#offeres">
+                                                <Link to={`/profile/${username || ''}#offeres`}>
                                                     <span className="icons gift">
                                                         <i className="fas fa-gift"></i>
                                                     </span>
@@ -111,7 +115,7 @@ const ProfilePage = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="/profile#order">
+                                                <Link to={`/profile/${username || ''}#order`}>
                                                     <span className="icons cart">
                                                         <i className="fa fa-cart-plus"></i>
                                                     </span>
@@ -120,7 +124,7 @@ const ProfilePage = () => {
                                                 </Link>
                                             </li>
                                             <li>
-                                                <Link to="/profile#referrals">
+                                                <Link to={`/profile/${username || ''}#referrals`}>
                                                     <span className="icons link">
                                                         <i className="fa fa-link"></i>
                                                     </span>
@@ -174,11 +178,11 @@ const ProfilePage = () => {
                                                         <span className="active">All Time</span>
                                                     </h4>
                                                     <div className="duration-option">
-                                                        <Link to="/profile#">All time</Link>
-                                                        <Link className="active" to="/profile#">24 H</Link>
-                                                        <Link to="/profile#">7D</Link>
-                                                        <Link to="/profile#">14D</Link>
-                                                        <Link to="/profile#">30D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>All time</Link>
+                                                        <Link className="active" to={`/profile/${username || ''}#`}>24 H</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>7D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>14D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>30D</Link>
                                                     </div>
                                                 </div>
                                                 <div className="card-body">
@@ -203,11 +207,11 @@ const ProfilePage = () => {
                                                         <span className="active">All Time</span>
                                                     </h4>
                                                     <div className="duration-option">
-                                                        <Link to="/profile#">All time</Link>
-                                                        <Link to="/profile#">24 H</Link>
-                                                        <Link to="/profile#">7D</Link>
-                                                        <Link className="active" to="/profile#">14D</Link>
-                                                        <Link to="/profile#">30D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>All time</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>24 H</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>7D</Link>
+                                                        <Link className="active" to={`/profile/${username || ''}#`}>14D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>30D</Link>
                                                     </div>
                                                 </div>
                                                 <div className="card-body">
@@ -232,11 +236,11 @@ const ProfilePage = () => {
                                                         <span className="active">All Time</span>
                                                     </h4>
                                                     <div className="duration-option">
-                                                        <Link to="/profile#">All time</Link>
-                                                        <Link to="/profile#">24 H</Link>
-                                                        <Link className="active" to="/profile#">7D</Link>
-                                                        <Link to="/profile#">14D</Link>
-                                                        <Link to="/profile#">30D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>All time</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>24 H</Link>
+                                                        <Link className="active" to={`/profile/${username || ''}#`}>7D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>14D</Link>
+                                                        <Link to={`/profile/${username || ''}#`}>30D</Link>
                                                     </div>
                                                 </div>
                                                 <div className="card-body">

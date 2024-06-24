@@ -9,7 +9,10 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
-
+const logout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
+  };
   useEffect(() => {
     const fetchData = async () => {
       const userData = await fetchUserData();
@@ -120,7 +123,7 @@ const Navbar = () => {
                       <Link className="dropdown-item" to="#settings" onClick={closeDropdownMenu}>
                         <i className="la la-cog"></i>Settings
                       </Link>
-                      <Link className="dropdown-item logout" to="#Logout" onClick={closeDropdownMenu}>
+                      <Link className="dropdown-item logout" to="/login" onClick={() => { closeDropdownMenu(); logout(); }}>
                         <i className="la la-sign-out"></i>Logout
                       </Link>
                     </div>

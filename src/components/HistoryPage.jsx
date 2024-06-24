@@ -133,51 +133,7 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="footer dashboard">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-6">
-              <div className="footer-link text-left">
-                <a href="#" className="m_logo">
-                  <img src="./images/m_logo.png" alt="" />
-                </a>
-                <a href="shop.html">Shop</a>
-                <a href="affiliate.html">Affiliates</a>
-                <a href="affiliate.html">Leaderboards</a>
-                <a href="support.html">Support</a>
-              </div>
-            </div>
-            <div className="col-xl-6">
-              <div className="footer-link text-end">
-                <a href="about.html">About</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="term-condition.html">Term & Service</a>
-                <a href="bug-bunty.html">Bug Bounty</a>
-              </div>
-            </div>
-          </div>
-          <div className="row align-items-center">
-            <div className="col-xl-6">
-              <div className="copy_right text-center text-lg-start">
-                Copyright ©
-                <script>
-                  var CurrentYear = new Date().getFullYear();
-                  document.write(CurrentYear);
-                </script>
-                CoinGain. All Rights Reserved.
-              </div>
-            </div>
-            <div className="col-xl-6 text-center text-lg-end py-5 py-lg-0">
-              <div className="social">
-                <a href="#"><i className="fab fa-youtube"></i></a>
-                <a href="#"><i className="fab fa-instagram"></i></a>
-                <a href="#"><i className="fab fa-twitter"></i></a>
-                <a href="#"><i className="fab fa-facebook"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 };
